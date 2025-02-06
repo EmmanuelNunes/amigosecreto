@@ -1,4 +1,4 @@
-# Amigo Secreto
+el# Amigo Secreto
  Demostração de funcionamento
 
    ![gif](https://github.com/user-attachments/assets/9ca71260-78ba-4753-ac80-50bf927b1fa9)
@@ -51,4 +51,4 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
 ## Contato:
-Para mais informações, entre em contato pelo email: Carllos.victor@hotmail.com
+Para mais informações, entre em contato pelo email: emmanuel.nunes2007@gmail.com
