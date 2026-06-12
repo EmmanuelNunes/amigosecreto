@@ -1,54 +1,83 @@
-el# Amigo Secreto
- Demostração de funcionamento
+# 🎁 Amigo Secreto
 
-   ![gif](https://github.com/user-attachments/assets/9ca71260-78ba-4753-ac80-50bf927b1fa9)
+![GitHub repo size](https://img.shields.io/github/repo-size/EmmanuelNunes/amigosecreto?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/EmmanuelNunes/amigosecreto?style=for-the-badge)
 
+> Aplicação web interativa para sortear amigos de uma lista, ideal para brincadeiras de "Amigo Secreto".
 
-Este projeto é uma aplicação web simples para sortear amigos de uma lista, ideal para brincadeiras de "Amigo Secreto". A aplicação permite que o usuário adicione nomes de amigos a uma lista, visualize a lista de amigos, e sorteie um amigo aleatoriamente. Após o sorteio, o nome do amigo sorteado é exibido na tela e a lista de amigos é limpa para um novo sorteio.
+## 🎥 Demonstração de funcionamento
 
-## Funcionalidades:
-1. **Adicionar Amigos**: Permite ao usuário adicionar nomes de amigos a uma lista.
-2. **Adicionar vários Amigos**: Permite ao usuário adicionar vários nomes de amigos a uma lista ao separar-los por virgulas.
-3. **Visualizar Lista de Amigos**: Exibe a lista de amigos adicionados.
-4. **Sortear Amigo**: Sorteia um amigo aleatoriamente da lista e exibe o nome sorteado.
-5. **Limpar Campo**: Limpa o campo de entrada de texto após adicionar um amigo.
-6. **Mensagens de Validação**: Exibe mensagens apropriadas se a lista de amigos estiver vazia ou se houver menos de dois amigos para sortear.
+![gif](https://github.com/user-attachments/assets/9ca71260-78ba-4753-ac80-50bf927b1fa9)
 
-## Tecnologias Utilizadas:
-- **HTML**: Estrutura da página web.
-- **CSS**: Estilização da página web.
-- **JavaScript**: Lógica de manipulação da lista de amigos e sorteio.
+---
 
-## Estrutura do Projeto:
-- `index.html`: Contém a estrutura HTML da aplicação.
-- `styles.css`: Contém os estilos CSS para a aplicação.
-- `app.js`: Contém a lógica JavaScript para manipulação da lista de amigos e sorteio.
+## 🚀 Funcionalidades
 
-## Como Executar:
-1. Clone este repositório para o seu ambiente local.
-2. Abra o arquivo `index.html` em um navegador web.
-3. Adicione nomes de amigos no campo de entrada e clique em "Adicionar Amigo".
-4. A lista de amigos será exibida na tela.
-5. Clique em "Sortear Amigo" para sortear um nome da lista.
-6. O nome sorteado será exibido na tela e a lista de amigos será limpa para um novo sorteio.
+1. **Adicionar Amigos**: Insira nomes de amigos na lista individualmente.
+2. **Adição em Lote**: Adicione vários nomes de uma só vez, separando-os por vírgula (ex: `João, Maria, José`).
+3. **Validação e Prevenção de Duplicatas**: Não permite a adição de nomes em branco ou nomes que já foram adicionados.
+4. **Interatividade Rápida**: Pressione a tecla `Enter` para adicionar um amigo rapidamente à lista.
+5. **Visualizar Lista**: Exibe de forma agradável na tela todos os amigos que já foram adicionados (estilo "chips").
+6. **Sortear Amigo**: Seleciona aleatoriamente um nome da lista e o destaca na tela com uma animação de confetes! 🎉
 
-## Exemplo de Uso:
-1. **Adicionar Amigos**:
-   - Digite o nome de um amigo no campo de entrada.
-   - Clique no botão "Adicionar Amigo".
-   - O nome será adicionado à lista de amigos exibida na tela.
+---
 
-2. **Sortear Amigo**:
-   - Clique no botão "Sortear Amigo".
-   - Se houver menos de dois amigos na lista, uma mensagem de alerta será exibida.
-   - Se houver pelo menos dois amigos na lista, um nome será sorteado e exibido na tela.
-   - A lista de amigos será limpa para um novo sorteio.
+## 🛠️ Tecnologias Utilizadas
 
-## Contribuições:
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
+- **HTML5**: Estrutura semântica da página.
+- **CSS3**: Estilização moderna com variáveis, flexbox e design responsivo.
+- **JavaScript (ES6+)**: Lógica de manipulação da DOM, validações em tempo real e algoritmos de sorteio.
+- **[Canvas Confetti](https://github.com/catdad/canvas-confetti)**: Biblioteca de terceiros integrada para exibir a animação de confetes na hora do sorteio.
 
-## Licença:
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
+---
 
-## Contato:
-Para mais informações, entre em contato pelo email: emmanuel.nunes2007@gmail.com
+## 🏃‍♂️ Como Executar
+
+1. Clone este repositório para o seu ambiente local:
+   ```bash
+   git clone https://github.com/EmmanuelNunes/amigosecreto.git
+   ```
+2. Abra o diretório do projeto:
+   ```bash
+   cd amigosecreto
+   ```
+3. Abra o arquivo `index.html` em um navegador de sua escolha.
+4. Comece a adicionar os nomes e divirta-se!
+
+---
+
+## 💡 Passo a Passo do Uso
+
+1. **Adicionando Amigos**:
+   - Digite o nome de um amigo no campo de texto ou digite vários separados por vírgula.
+   - Pressione **Enter** ou clique no botão **"Adicionar"**.
+   - Os nomes aparecerão imediatamente na lista logo abaixo.
+
+2. **Sorteando**:
+   - Com pelo menos **2 amigos** na lista, clique no botão **"Sortear amigo"**.
+   - O sistema fará o sorteio, exibirá o nome escolhido em destaque e você verá uma chuva de confetes!
+
+---
+
+## 🤝 Contribuições
+
+Contribuições são super bem-vindas! Se você tiver sugestões, basta seguir os passos abaixo:
+1. Faça um Fork do projeto
+2. Crie uma Branch para sua feature (`git checkout -b feature/MinhaFeature`)
+3. Faça o commit das suas alterações (`git commit -m 'Adicionando a MinhaFeature'`)
+4. Faça o Push para a Branch (`git push origin feature/MinhaFeature`)
+5. Abra um Pull Request
+
+---
+
+## 📄 Licença
+
+Este projeto é de código aberto e está disponível sob a licença [MIT](https://opensource.org/licenses/MIT). 
+
+---
+
+## ✉️ Contato
+
+Desenvolvido por **Emmanuel Nunes**.
+📧 E-mail: emmanuel.nunes2007@gmail.com
+🔗 GitHub: [EmmanuelNunes](https://github.com/EmmanuelNunes)

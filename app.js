@@ -1,73 +1,87 @@
 let friends = [];
 
-// Essa função é responsável por adicionar um amigo na lista de amigos
-function addFriend() {
-    let name = document.querySelector('input').value;
+function adicionarAmigo() {
+    const inputAmigo = document.getElementById('amigo');
+    const name = inputAmigo.value;
 
-    if (name == '') {
-        alert('Por favor, insira um nome');
+    if (!name.trim()) {
+        alert('Por favor, insira um nome válido.');
         return;
+    }
 
-    } else {
+    // Adiciona suporte a múltiplos nomes separados por vírgula
+    let namesArray = name.split(',').map(n => n.trim()).filter(n => n !== '');
+    
+    // Filtra amigos já adicionados
+    const novosAmigos = namesArray.filter(n => !friends.includes(n));
 
-        // Adiciona um amigo na lista de amigos e implementa o uso de vírgulas para separar os nomes/
-        let namesArray = name.split(',').map(name => name.trim());
-        namesArray = namesArray.filter(name => name !== '');
-        friends.push(...namesArray);
-        friendsList();
-        let list = document.getElementById('resultado');
-        list.innerHTML = '';
-    };
-};
+    if (novosAmigos.length === 0) {
+        alert('Nome(s) já adicionado(s) ou inválido(s).');
+        inputAmigo.value = '';
+        inputAmigo.focus();
+        return;
+    }
 
-// Essa função é responsável por listar os amigos adicionados
-function friendsList() {
-    let list = document.querySelector('ul');
+    friends.push(...novosAmigos);
+    updateFriendsList();
+    
+    // Limpa o input e volta o foco para ele
+    inputAmigo.value = '';
+    inputAmigo.focus();
+    
+    // Limpa o resultado anterior caso haja
+    document.getElementById('resultado').innerHTML = '';
+}
+
+function updateFriendsList() {
+    const list = document.getElementById('listaAmigos');
     list.innerHTML = '';
 
-    let i = 0;
-    while (i < friends.length) {
-        if (friends[i] !=='') {let item = document.createElement('li');
-        item.textContent = friends[i];
+    friends.forEach(friend => {
+        const item = document.createElement('li');
+        item.textContent = friend;
         list.appendChild(item);
-        }
-        i++;
+    });
+}
+
+function sortearAmigo() {
+    if (friends.length < 2) {
+        alert('Adicione pelo menos 2 amigos para sortear!');
+        return;
+    }
+
+    const randomIndex = Math.floor(Math.random() * friends.length);
+    const selectedFriend = friends[randomIndex];
+
+    document.getElementById('resultado').innerHTML = `🎉 Amigo sorteado: <strong>${selectedFriend}</strong> 🎉`;
+
+    // Aciona a animação de confetes, se a biblioteca estiver carregada
+    if (typeof confetti === 'function') {
+        confetti({
+            particleCount: 150,
+            spread: 80,
+            origin: { y: 0.6 }
+        });
     }
 }
 
-// essa função é responsável por limpar o campo de input
-function clearField() {
-    document.querySelector('input').value = '';
-};
-
-// essa função é responsável por sortear um amigo na lista de amigos
-function sortFriend() {
-
-   // trecho de alerta para caso a lista de amigos seja menor que 2
-    if (friends.length < 2) {
-        alert('Adione pelos menos 2 amigos para sortear!');
-        return;
-    };
-   
-
-    let friendsList = Math.floor(Math.random() * friends.length);
-    let selectedFriend = friends[friendsList];
-
-
-    document.getElementById('resultado').innerHTML = `Amigo sorteado: ${selectedFriend}`;
-
-    confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 }
-    });
-};
-
 function reset() {
-    friends = [''];
-    friendsList();
+    friends = [];
+    updateFriendsList();
     document.getElementById('resultado').innerHTML = '';
-    document.getElementById('listaAmigos').innerHTML = '';
-    clearField();
+    const inputAmigo = document.getElementById('amigo');
+    inputAmigo.value = '';
+    inputAmigo.focus();
 }
 
+// Permite adicionar amigos pressionando a tecla 'Enter'
+document.addEventListener('DOMContentLoaded', () => {
+    const inputAmigo = document.getElementById('amigo');
+    if (inputAmigo) {
+        inputAmigo.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                adicionarAmigo();
+            }
+        });
+    }
+});
